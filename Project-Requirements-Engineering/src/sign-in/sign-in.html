@@ -1,0 +1,64 @@
+<template>
+  <div class="sign-in-container">
+    <h2>Sign In</h2>
+    <form submit.trigger="signIn()">
+      <div>
+        <label for="username">Username:</label>
+        <input id="username" type="email" value.bind="username" required />
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <input id="password" type="password" value.bind="password" required />
+      </div>
+
+      <button type="submit">Sign In</button>
+    </form>
+
+    <div if.bind="errorMessage">
+      <p>${errorMessage}</p>
+    </div>
+  </div>
+
+  <style>
+    .sign-in-container {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+    }
+    form div {
+      margin-bottom: 10px;
+    }
+    label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    p {
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</template>
