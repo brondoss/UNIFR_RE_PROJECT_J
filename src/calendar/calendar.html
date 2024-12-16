@@ -1,0 +1,75 @@
+<template>
+    <div class="calendar-container">
+      <!-- Choix de la vue -->
+      <select value.bind="selectedView" change.delegate="changeView(selectedView)">
+        <option value="month">Month View</option>
+        <option value="week">Week View</option>
+        <option value="day">Day View</option>
+      </select>
+  
+      <!-- Affichage du mois -->
+      <div class="calendar-header">
+        <button click.delegate="goToPreviousMonth()">Previous</button>
+        <span>${currentDate.toLocaleString('default', { month: 'long' })} ${currentDate.getFullYear()}</span>
+        <button click.delegate="goToNextMonth()">Next</button>
+      </div>
+  
+      <!-- Affichage en fonction de la vue sélectionnée -->
+      <div class="calendar-view" if.bind="selectedView === 'month'">
+        <table>
+          <thead>
+            <tr>
+              <th repeat.for="day of daysOfWeek">${day}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr repeat.for="week of getMonthDays()">
+              <td repeat.for="day of week">${day}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <div class="calendar-view" if.bind="selectedView === 'week'">
+        <p>${getWeekView()}</p>
+      </div>
+  
+      <div class="calendar-view" if.bind="selectedView === 'day'">
+        <p>${getDayView()}</p>
+      </div>
+    </div>
+  
+    <style>
+      .calendar-container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+      }
+  
+      .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+  
+      .calendar-view table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+  
+      .calendar-view table, .calendar-view th, .calendar-view td {
+        border: 1px solid #ccc;
+      }
+  
+      .calendar-view th, .calendar-view td {
+        padding: 10px;
+        text-align: center;
+      }
+  
+      .calendar-view td {
+        height: 50px;
+      }
+    </style>
+  </template>
+  

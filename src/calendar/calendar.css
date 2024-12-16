@@ -1,0 +1,102 @@
+/* Style global pour le calendrier */
+.calendar-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style pour l'en-tête de calendrier */
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .calendar-header span {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  button {
+    padding: 5px 10px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style pour le calendrier */
+  .calendar-view {
+    margin-top: 20px;
+  }
+  
+  /* Style du tableau du calendrier (affichage du mois) */
+  .calendar-view table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .calendar-view table, .calendar-view th, .calendar-view td {
+    border: 1px solid #ccc;
+  }
+  
+  .calendar-view th, .calendar-view td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .calendar-view td {
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+  }
+  
+  /* Style pour les jours de la semaine */
+  .calendar-view th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Style des cellules du calendrier */
+  .calendar-view td:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  /* Style pour la vue par semaine et par jour */
+  .calendar-view p {
+    font-size: 1.1em;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  select {
+    padding: 5px 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Ajout d'une bordure autour du calendrier */
+  .calendar-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Style de l'option du menu déroulant */
+  select:focus {
+    outline: none;
+    border-color: #4CAF50;
+  }
+  

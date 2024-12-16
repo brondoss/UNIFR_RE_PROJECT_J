@@ -36,7 +36,7 @@
   
   .grid-item {
     padding: 15px;
-    background-color: #007bff;
+    background-color: #030303;
     color: white;
     border: none;
     border-radius: 8px;
@@ -46,7 +46,7 @@
   }
   
   .grid-item:hover {
-    background-color: #0056b3;
+    background-color: #070707c2;
   }
   
   /* Bottom buttons */
@@ -58,7 +58,7 @@
   
   .bottom-btn {
     padding: 10px;
-    background-color: #28a745;
+    background-color: #0809086b;
     color: white;
     border: none;
     border-radius: 8px;
