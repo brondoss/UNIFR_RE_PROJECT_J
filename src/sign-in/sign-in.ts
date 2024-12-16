@@ -2,9 +2,6 @@
 import { App } from '../app/app';
 import { resolve } from 'aurelia';
 import { IRouter, RouteableComponent } from '@aurelia/router-lite';
-/* import { customElement } from '@aurelia/runtime-html';
-import template from './sign-in.html';
-@customElement({ name: 'sign-in', template }) */
 export class SignIn {
   private readonly router: IRouter = resolve(IRouter);
   public username: string = '';
@@ -20,10 +17,9 @@ export class SignIn {
   // Verify identification informations
   public signIn() {
     if (this.username === this.validUsername && this.password === this.validPassword) {
-      this.router.load('menu')
-      // When a false identification is made
-    } else {
-      this.errorMessage = 'Identifier or password incorrect.';
+      this.router.load('menu') // Redirects to menu
+    } else  {
+      this.errorMessage = 'Identifier or password incorrect.'; // When a false identification is made
     }
   }
 }
