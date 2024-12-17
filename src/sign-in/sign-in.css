@@ -1,15 +1,24 @@
 .sign-in-container {
-    width: 100%;
-    max-width: 400%;
-    margin: 0 auto;
+    display: inline-block;
+    min-width: fit-content;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
+    box-sizing: border-box; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  h1 {
+    white-space: nowrap;
+    margin-bottom: 150px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
   }
   
-  h1 {
+  h2 {
     text-align: center;
+    margin-top: 0;
     font-size: 24px;
     margin-bottom: 20px;
   }
@@ -41,6 +50,7 @@
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 200px;
   }
   
   button:hover {

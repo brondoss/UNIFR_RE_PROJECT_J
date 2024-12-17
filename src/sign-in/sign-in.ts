@@ -2,6 +2,7 @@
 import { App } from '../app/app';
 import { resolve } from 'aurelia';
 import { IRouter, RouteableComponent } from '@aurelia/router-lite';
+
 export class SignIn {
   private readonly router: IRouter = resolve(IRouter);
   public username: string = '';
