@@ -55,9 +55,29 @@
         </table>
       </div>
   
-      <div class="calendar-view" if.bind="selectedView === 'day'">
-        <p>${getDayView()}</p>
-      </div>
+      <!-- Vue par jour -->
+<div class="calendar-view" if.bind="selectedView === 'day'">
+  <p class="week-title">${currentDate.toLocaleDateString('default', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Hour</th>
+        <th>Events</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr repeat.for="hour of hoursOfDay">
+        <td>${hour}</td>
+        <td>
+          <div class="day-cell">
+            <p repeat.for="event of getDayEvents().filter(e => e.time.includes(hour))">${event.description}</p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
     </div>
   
     <style>

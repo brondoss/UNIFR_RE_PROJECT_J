@@ -1,122 +1,106 @@
-/* Style global pour le calendrier */
+/* Conteneur principal */
 .calendar-container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Style pour l'en-tête de calendrier */
-  .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .calendar-header span {
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-  
-  button {
-    padding: 5px 10px;
-    font-size: 1em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Style pour le calendrier */
-  .calendar-view {
-    margin-top: 20px;
-  }
-  
-  /* Style du tableau du calendrier (affichage du mois) */
-  .calendar-view table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .calendar-view table, .calendar-view th, .calendar-view td {
-    border: 1px solid #ccc;
-  }
-  
-  .calendar-view th, .calendar-view td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-  }
-  /* Styles pour la cellule d'heure */
-.calendar-view td:first-child {
-  text-align: right;
-  font-weight: bold;
-}
-  
-/* Style pour les cellules vides (heures) */
-.day-cell {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
   background-color: #f9f9f9;
-  height: 100%;
-  border: 1px dashed #ddd;
 }
-  .calendar-view td {
-    height: 50px;
-    width: 80px;
-    vertical-align: middle;
-  }
-  
-  /* Style pour les jours de la semaine */
-  .calendar-view th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
-  
-  /* Style des cellules du calendrier */
-  .calendar-view td:hover {
-    background-color: #f0f0f0;
-    cursor: pointer;
-  }
-  
-  /* Style pour la vue par semaine et par jour */
-  .calendar-view p {
-    font-size: 1.1em;
-    margin-top: 20px;
-    font-weight: bold;
-  }
-  
-  select {
-    padding: 5px 10px;
-    font-size: 1em;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  /* Ajout d'une bordure autour du calendrier */
-  .calendar-container {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  /* Style pour le titre de la semaine */
-.week-title {
+
+/* En-tête du calendrier */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-header span {
   font-size: 1.2em;
   font-weight: bold;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 1em;
+  background-color: #050505;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Style des tableaux */
+.calendar-view table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Assure des colonnes de largeur uniforme */
+}
+
+.calendar-view th,
+.calendar-view td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  height: 50px; /* Assure une hauteur uniforme pour toutes les lignes */
+}
+
+/* Uniformité des en-têtes (jours de la semaine) */
+.calendar-view th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  width: calc(100% / 7); /* Largeur égale pour chaque jour */
+}
+
+/* Largeur uniforme des colonnes des jours */
+.calendar-view td {
+  width: calc(100% / 7); /* Divise la largeur totale entre les jours */
+  background-color: #fff; /* Assure que toutes les cellules des jours ont la même couleur */
+}
+
+
+.calendar-view th:nth-child(n),
+.calendar-view td:nth-child(n) {
+  background-color: #f2f2f2; /* Uniformité des couleurs */
+  color: inherit; /* Assure que les couleurs de texte sont uniformes */
+}
+
+/* Cellules vides */
+.day-cell {
+  background-color: #fff;
+  border: 1px dashed #ddd;
+  position: relative;
+  height: 100%;
+}
+
+/* Vue par semaine et par jour */
+.week-title {
+  font-size: 1.4em;
   margin-bottom: 10px;
   text-align: center;
 }
 
-  /* Style de l'option du menu déroulant */
-  select:focus {
-    outline: none;
-    border-color: #4CAF50;
-  }
-  
+select {
+  padding: 5px 10px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+select:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.calendar-view td:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
