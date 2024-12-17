@@ -1,5 +1,8 @@
+import { IRouter, RouteableComponent } from '@aurelia/router-lite';
+import { resolve } from 'aurelia';
 export class Calendar {
   // Propriétés de base
+  private readonly router: IRouter = resolve(IRouter);
   public currentDate: Date = new Date();
   public selectedView: string = 'month'; // Valeurs possibles : 'month', 'week', 'day'
   public daysOfWeek: string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -121,4 +124,9 @@ export class Calendar {
     startOfWeek.setDate(date.getDate() - dayOfWeek); 
     return startOfWeek;
   }
+
+    // Method for Navbar clicks
+    onLogoClick(){
+      this.router.load('menu')
+    }
 }

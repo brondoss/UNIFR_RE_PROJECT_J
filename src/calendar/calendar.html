@@ -1,4 +1,20 @@
 <template>
+  <nav class="unibar navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/menu" click.trigger="onLogoClick()"><img  src="../node_modules/bootstrap-icons/icons/star.svg" height="44px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav me-auto mb-2 mb-lg-0"></div>
+        <form class="d-flex" style="max-height: 44px;">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="max-height: 44px; width: 30vw;">
+          <button class="btn btn-outline-success" style="height: 44px; max-width: 144px;" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+    <div style="min-height: 20px;height: 5%;"></div>
     <div class="calendar-container">
       <!-- Choix de la vue -->
       <select value.bind="selectedView" change.trigger="changeView(selectedView)">

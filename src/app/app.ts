@@ -1,8 +1,3 @@
-// src/app.ts
-// import { inject } from 'aurelia-framework';
-
-// @inject()
-
 import { Calendar } from '../calendar/calendar';
 import { resolve } from 'aurelia';
 import { IRouter, RouteableComponent } from '@aurelia/router-lite';
@@ -19,5 +14,9 @@ export class App {
     } else {
       alert(`Button clicked: ${buttonName}`);
     }
+  }
+  // Method for Navbar clicks
+  onLogoClick(){
+    this.router.load('menu')
   }
 }
