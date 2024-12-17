@@ -1,6 +1,7 @@
 import { route } from "@aurelia/router-lite";
 import { SignIn } from "./sign-in/sign-in";
 import { App } from "./app/app";
+import { Calendar } from "./calendar/calendar";
 import { Test } from "./test";
 
 @route({
@@ -18,6 +19,11 @@ import { Test } from "./test";
       path: 'menu',
       component: App,
       title: 'Main Menu',
+    },
+    {
+      path: 'schedule',
+      component: Calendar,
+      title: 'Schedule',
     },
   ],
 })
