@@ -3,7 +3,8 @@ au-viewport {
     display: block; /* Ensures it behaves as a block-level element */
     width: 100vw;
     height: 100vh;
-    position: fixed;
+    position: static;
+    overflow:scroll;
     top: 0;
     left: 0;
   }
