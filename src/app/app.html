@@ -1,25 +1,27 @@
 <!-- src/app.html -->
 <template>
-    <div class="container">
+  <div style="min-height: 60px;height: 12%;"></div>
+    <div class="container-md" style="height: 80%;max-height: 600px;">
       <!-- 3x3 Grid of buttons -->
-      <div class="grid">
-        <button class="grid-item" click.trigger="onButtonClick('Schedule')">Schedule</button>
-        <button class="grid-item" click.trigger="onButtonClick('Grades')">Grades</button>
-        <button class="grid-item" click.trigger="onButtonClick('Library')">Library</button>
-        <button class="grid-item" click.trigger="onButtonClick('Billing')">Billing</button>
-        <button class="grid-item" click.trigger="onButtonClick('Account')">Account</button>
-        <button class="grid-item" click.trigger="onButtonClick('Sport')">Sport</button>
-        <button class="grid-item" click.trigger="onButtonClick('Food')">Food</button>
-        <button class="grid-item" click.trigger="onButtonClick('Directory')">Directory</button>
-        <button class="grid-item" click.trigger="onButtonClick('Exams')">Exams</button>
+      <div class="row h-25">
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Schedule')">Schedule</button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Grades')">Grades</button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Library')">Library</button>
       </div>
-  
-      <!-- 3 main buttons at the bottom -->
-      <div class="bottom-buttons">
-        <button class="bottom-btn" click.trigger="onButtonClick('Localisation')">Localisation</button>
-        <button class="bottom-btn" click.trigger="onButtonClick('Home')">Home</button>
-        <button class="bottom-btn" click.trigger="onButtonClick('Contact')">Contact</button>
+      <div class="row h-25">
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Billing')">Billing</button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Account')">Account</button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Sport')">Sport</button>
+      </div>
+      <div class="row h-25">
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Food')">Food</button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Directory')">Directory</button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Exams')">Exams</button>
+      </div>
+      <div class="row h-25">
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Localisation')">Localisation</button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Home')">Home</button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Contact')">Contact</button>
       </div>
     </div>
   </template>
-  

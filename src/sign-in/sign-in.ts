@@ -1,5 +1,4 @@
 // import { bindable } from '@aurelia/framework';
-import { App } from '../app/app';
 import { resolve } from 'aurelia';
 import { IRouter, RouteableComponent } from '@aurelia/router-lite';
 export class SignIn {
