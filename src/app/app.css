@@ -19,7 +19,7 @@
   
   .container {
     width: 100%;
-    max-width: 400px; /* For iPhone screen width */
+    max-width: 400px; 
     padding: 16px;
     background-color: #fff;
     border-radius: 12px;
