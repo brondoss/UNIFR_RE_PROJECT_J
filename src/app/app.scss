@@ -7,22 +7,11 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
 /* 3x3 grid of buttons */
 
 .grid-item {
   padding: 15px;
-  background: rgb(9,24,43);
-  background: linear-gradient(0deg, rgba(9,24,43,1) 0%, rgba(19,19,71,1) 100%); 
+  background: rgb(31, 66, 119);;
   color: white;
   border: none;
   border-radius: 8px;
@@ -36,4 +25,7 @@ body {
   color: white;
   transform: translateY(-5px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.unibar {
+  background-color: rgb(31, 66, 119);
 }
