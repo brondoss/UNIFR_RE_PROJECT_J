@@ -31,29 +31,34 @@
         </table>
       </div>
   <!-- Vue par semaine -->
-      <div class="calendar-view" if.bind="selectedView === 'week'">
-        <!-- Titre de la semaine -->
-  <div class="week-title">
-    <span>${getWeekTitle()}</span> <!-- Affichage du titre de la semaine -->
+  <div class="calendar-view" if.bind="selectedView === 'week'">
+    <!-- Titre de la semaine -->
+    <div class="week-title">
+      <span>${getWeekTitle()}</span> <!-- Affichage du titre de la semaine -->
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th></th> <!-- Colonne vide pour les heures -->
+          <th repeat.for="day of daysOfWeek">${day}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Affichage des heures et des jours de la semaine -->
+        <tr repeat.for="hour of hoursOfDay">
+          <td>${hour}</td> <!-- Affiche l'heure -->
+          <td repeat.for="day of getWeekDays()">
+            <div class="day-cell">
+              <!-- Vérifie si l'heure de la cellule correspond à un événement -->
+              <p repeat.for="event of getWeekEvents().filter(e => e.hour === hour)">
+                ${event.description}
+              </p>
+            </div> 
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-        <table>
-          <thead>
-            <tr>
-              <th></th> <!-- Colonne vide pour les heures -->
-              <th repeat.for="day of daysOfWeek">${day}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Affichage des heures et des jours de la semaine -->
-            <tr repeat.for="hour of hoursOfDay">
-              <td>${hour}</td> <!-- Affiche l'heure -->
-              <td repeat.for="day of getWeekDays()">
-                <div class="day-cell"></div> 
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
   
       <!-- Vue par jour -->
 <div class="calendar-view" if.bind="selectedView === 'day'">

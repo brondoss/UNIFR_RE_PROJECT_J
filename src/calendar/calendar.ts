@@ -61,11 +61,27 @@ export class Calendar {
     return weekDays;
   }
 
+  public getWeekEvents(): { hour: string, description: string }[] {
+    return [
+      { hour: '08:00 - 09:00', description: 'course' },
+      { hour: '09:00 - 10:00', description: 'course' },
+      { hour: '10:00 - 11:00', description: 'course' },
+      { hour: '11:00 - 12:00', description: 'course' },
+      { hour: '13:00 - 14:00', description: 'course' },
+      { hour: '14:00 - 15:00', description: 'course' },
+      { hour: '15:00 - 16:00', description: 'course' }
+    ];
+  }
+  
   public getDayEvents(): { time: string, description: string }[] {
     return [
+      { time: '08:00 - 09:00', description: 'Programmation course' },
       { time: '09:00 - 10:00', description: 'Programmation course' },
+      { time: '10:00 - 11:00', description: 'REIS course' },
       { time: '11:00 - 12:00', description: 'REIS course' },
-      { time: '14:00 - 15:00', description: 'Project brainstorming' }
+      { time: '13:00 - 14:00', description: 'Project brainstorming' },
+      { time: '14:00 - 15:00', description: 'Project brainstorming' },
+      { time: '15:00 - 16:00', description: 'Databse course' }
     ];
   }
 
@@ -83,7 +99,7 @@ export class Calendar {
     return `${startFormatted} - ${endFormatted}`;
   }
 
-  // Retourner une vue par jour (simplifiée)
+  // Retourner une vue par jour 
   public getDayView() {
     const day = this.currentDate.getDate();
     return `Day View for ${day}`;
@@ -96,7 +112,9 @@ export class Calendar {
     endOfWeek.setDate(startOfWeek.getDate() + 6); // 7 jours de la semaine
     return `Week View: ${startOfWeek.toLocaleDateString('en-US')} - ${endOfWeek.toLocaleDateString('en-US')}`;  // Changement en 'en-US'
   }
+  
 
+  
   private getStartOfWeek(date: Date): Date {
     const startOfWeek = new Date(date);
     const dayOfWeek = startOfWeek.getDay();
