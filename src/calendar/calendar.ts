@@ -55,7 +55,7 @@ export class Calendar {
     for (let i = 0; i < 7; i++) {
       const day = new Date(startOfWeek);
       day.setDate(startOfWeek.getDate() + i);
-      weekDays.push(day.toLocaleDateString('en-US', { weekday: 'short' })); // Modification en 'en-US'
+      weekDays.push(day.toLocaleDateString('en-US', { weekday: 'short' })); 
     }
 
     return weekDays;
@@ -85,16 +85,16 @@ export class Calendar {
     ];
   }
 
-  // Méthode pour générer le titre de la semaine (ex: "16 December - 22 December")
+  // Méthode pour générer le titre de la semaine 
   public getWeekTitle(): string {
     const startOfWeek = this.getStartOfWeek(this.currentDate);
     const endOfWeek = new Date(startOfWeek);
     endOfWeek.setDate(startOfWeek.getDate() + 6); // 7 jours de la semaine
 
-    // Formater les dates sous la forme "16 December - 22 December"
+    // Formater les dates sous la forme 
     const options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long' };
-    const startFormatted = startOfWeek.toLocaleDateString('en-US', options);  // Modification en 'en-US'
-    const endFormatted = endOfWeek.toLocaleDateString('en-US', options);      // Modification en 'en-US'
+    const startFormatted = startOfWeek.toLocaleDateString('en-US', options);  
+    const endFormatted = endOfWeek.toLocaleDateString('en-US', options);      
 
     return `${startFormatted} - ${endFormatted}`;
   }
@@ -105,7 +105,7 @@ export class Calendar {
     return `Day View for ${day}`;
   }
 
-  // Retourner une vue par semaine (simplifiée)
+  // Retourner une vue par semaine 
   public getWeekView() {
     const startOfWeek = this.getStartOfWeek(this.currentDate);
     const endOfWeek = new Date(startOfWeek);
@@ -118,7 +118,7 @@ export class Calendar {
   private getStartOfWeek(date: Date): Date {
     const startOfWeek = new Date(date);
     const dayOfWeek = startOfWeek.getDay();
-    startOfWeek.setDate(date.getDate() - dayOfWeek); // Réinitialiser à dimanche
+    startOfWeek.setDate(date.getDate() - dayOfWeek); 
     return startOfWeek;
   }
 }
