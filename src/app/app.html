@@ -1,27 +1,66 @@
 <!-- src/app.html -->
 <template>
+  <nav class="unibar navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" style="max-height: 44px;">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="max-height: 44px;">
+          <button class="btn btn-outline-success" style="height: 44px;" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+      </div>
+    </div>
+  </nav>
   <div style="min-height: 4cm;height: 12%;"></div>
     <div class="container-md" style="height: 80%;max-height: 600px;">
       <!-- 3x3 Grid of buttons -->
       <div class="row h-25">
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Schedule')">Schedule</button>
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Grades')">Grades</button>
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Library')">Library</button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Schedule')"><img src="../../node_modules/bootstrap-icons/icons/calendar2-week.svg" height="80%"><p>Schedule</p></button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Grades')"><img src="../../node_modules/bootstrap-icons/icons/graph-down-arrow.svg" height="80%"><p>Grades</p></button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Library')"><img src="../../node_modules/bootstrap-icons/icons/book.svg" height="80%"><p>Library</p></button>
       </div>
       <div class="row h-25">
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Billing')">Billing</button>
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Account')">Account</button>
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Sport')">Sport</button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Billing')"><img src="../../node_modules/bootstrap-icons/icons/card-checklist.svg" height="80%"><p>Billing</p></button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Account')"><img src="../../node_modules/bootstrap-icons/icons/person.svg" height="80%"><p>Account</p></button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Sport')"><img src="../../node_modules/bootstrap-icons/icons/bicycle.svg" height="80%"><p>Sport</p></button>
       </div>
       <div class="row h-25">
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Food')">Food</button>
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Directory')">Directory</button>
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Exams')">Exams</button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Food')"><img src="../../node_modules/bootstrap-icons/icons/graph-down-arrow.svg" height="80%"><p>Food</p></button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Directory')"><img src="../../node_modules/bootstrap-icons/icons/graph-down-arrow.svg" height="80%"><p>Directory</p></button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Exams')"><img src="../../node_modules/bootstrap-icons/icons/pencil.svg" height="80%"><p>Exams</p></button>
       </div>
-      <div class="row h-25">
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Localisation')">Localisation</button>
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Home')">Home</button>
-        <button class="col grid-item border rounded" click.trigger="onButtonClick('Contact')">Contact</button>
-      </div>
-    </div>
+      <!-- <div class="row h-25">
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Localisation')"><img src="../../node_modules/bootstrap-icons/icons/graph-down-arrow.svg" height="80%"><p>Language</p></button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Home')"><img src="../../node_modules/bootstrap-icons/icons/graph-down-arrow.svg" height="80%"><p>Home</p></button>
+        <button class="col grid-item border rounded" click.trigger="onButtonClick('Contact')"><img src="../../node_modules/bootstrap-icons/icons/graph-down-arrow.svg" height="80%"><p>Contact</p></button>
+      </div> -->
+    </div>     
   </template>
