@@ -39,12 +39,13 @@ export class Calendar {
   
     // Méthodes pour naviguer dans le mois
     public goToPreviousMonth() {
-      this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+      this.currentDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() - 1, 1);
     }
-  
+    
     public goToNextMonth() {
-      this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+      this.currentDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 1);
     }
+    
   
     // Retourner une vue par jour (simplifiée)
     public getDayView() {

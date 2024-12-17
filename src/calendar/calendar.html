@@ -1,7 +1,7 @@
 <template>
     <div class="calendar-container">
       <!-- Choix de la vue -->
-      <select value.bind="selectedView" change.delegate="changeView(selectedView)">
+      <select value.bind="selectedView" change.trigger="changeView(selectedView)">
         <option value="month">Month View</option>
         <option value="week">Week View</option>
         <option value="day">Day View</option>
@@ -9,9 +9,9 @@
   
       <!-- Affichage du mois -->
       <div class="calendar-header">
-        <button click.delegate="goToPreviousMonth()">Previous</button>
+        <button click.trigger="goToPreviousMonth()">Previous</button>
         <span>${currentDate.toLocaleString('default', { month: 'long' })} ${currentDate.getFullYear()}</span>
-        <button click.delegate="goToNextMonth()">Next</button>
+        <button click.trigger="goToNextMonth()">Next</button>
       </div>
   
       <!-- Affichage en fonction de la vue sélectionnée -->
