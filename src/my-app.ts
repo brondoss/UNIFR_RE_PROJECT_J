@@ -2,8 +2,6 @@ import { route } from "@aurelia/router-lite";
 import { SignIn } from "./sign-in/sign-in";
 import { App } from "./app/app";
 import { Calendar } from "./calendar/calendar";
-import { Test } from "./test";
-
 @route({
   routes: [
     {

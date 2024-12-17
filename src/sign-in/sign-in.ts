@@ -1,4 +1,3 @@
-// import { bindable } from '@aurelia/framework';
 import { resolve } from 'aurelia';
 import { IRouter, RouteableComponent } from '@aurelia/router-lite';
 
