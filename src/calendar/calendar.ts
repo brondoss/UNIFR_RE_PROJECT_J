@@ -3,7 +3,9 @@ export class Calendar {
     public currentDate: Date = new Date();
     public selectedView: string = 'month'; // Valeurs possibles : 'month', 'week', 'day'
     public daysOfWeek: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  
+    public hoursOfDay: string[] = ['08:00 - 09:00', '09:00 - 10:00', '10:00 - 11:00', '11:00 - 12:00', '12:00 - 13:00', '13:00 - 14:00', '14:00 - 15:00', '15:00 - 16:00', '16:00 - 17:00', '17:00 - 18:00'];
+
+
     // Méthode pour générer les jours du mois
     public getMonthDays(): string[][] {
       const days: string[][] = [];
@@ -45,8 +47,37 @@ export class Calendar {
     public goToNextMonth() {
       this.currentDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 1);
     }
-    
+
+
+
+    // Retourner les jours de la semaine pour la vue "week"
+public getWeekDays(): string[] {
+  const startOfWeek = this.getStartOfWeek(this.currentDate);
+  const weekDays: string[] = [];
+
+  for (let i = 0; i < 7; i++) {
+    const day = new Date(startOfWeek);
+    day.setDate(startOfWeek.getDate() + i);
+    weekDays.push(day.toLocaleDateString('default', { weekday: 'short' })); // Affiche le jour de la semaine (ex: "Mon", "Tue")
+  }
+
+  return weekDays;
+}
+// Méthode pour générer le titre de la semaine (ex: "15 December - 21 December")
+public getWeekTitle(): string {
+  const startOfWeek = this.getStartOfWeek(this.currentDate);
+  const endOfWeek = new Date(startOfWeek);
+  endOfWeek.setDate(startOfWeek.getDate() + 6); // 7 jours de la semaine
+
+  // Formater les dates sous la forme "15 December - 21 December"
+  const options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long' };
+  const startFormatted = startOfWeek.toLocaleDateString('default', options);
+  const endFormatted = endOfWeek.toLocaleDateString('default', options);
   
+  return `${startFormatted} - ${endFormatted}`;
+}
+
+
     // Retourner une vue par jour (simplifiée)
     public getDayView() {
       const day = this.currentDate.getDate();

@@ -49,13 +49,25 @@
   }
   
   .calendar-view th, .calendar-view td {
+    border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
   }
+  /* Styles pour la cellule d'heure */
+.calendar-view td:first-child {
+  text-align: right;
+  font-weight: bold;
+}
   
+/* Style pour les cellules vides (heures) */
+.day-cell {
+  background-color: #f9f9f9;
+  height: 100%;
+  border: 1px dashed #ddd;
+}
   .calendar-view td {
     height: 50px;
-    width: 50px;
+    width: 80px;
     vertical-align: middle;
   }
   
@@ -94,6 +106,14 @@
     background-color: #f9f9f9;
   }
   
+  /* Style pour le titre de la semaine */
+.week-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
   /* Style de l'option du menu déroulant */
   select:focus {
     outline: none;

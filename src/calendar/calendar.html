@@ -15,6 +15,7 @@
       </div>
   
       <!-- Affichage en fonction de la vue sélectionnée -->
+       <!-- Vue par mois -->
       <div class="calendar-view" if.bind="selectedView === 'month'">
         <table>
           <thead>
@@ -29,9 +30,29 @@
           </tbody>
         </table>
       </div>
-  
+  <!-- Vue par semaine -->
       <div class="calendar-view" if.bind="selectedView === 'week'">
-        <p>${getWeekView()}</p>
+        <!-- Titre de la semaine -->
+  <div class="week-title">
+    <span>${getWeekTitle()}</span> <!-- Affichage du titre de la semaine -->
+  </div>
+        <table>
+          <thead>
+            <tr>
+              <th></th> <!-- Colonne vide pour les heures -->
+              <th repeat.for="day of daysOfWeek">${day}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Affichage des heures et des jours de la semaine -->
+            <tr repeat.for="hour of hoursOfDay">
+              <td>${hour}</td> <!-- Affiche l'heure -->
+              <td repeat.for="day of getWeekDays()">
+                <div class="day-cell"></div> 
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
   
       <div class="calendar-view" if.bind="selectedView === 'day'">
